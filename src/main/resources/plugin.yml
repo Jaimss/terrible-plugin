@@ -1,3 +1,9 @@
 name: TerriblePlugin
 version: @version@
 main: dev.jaims.terribleplugin.Main
+permissions:
+  terribleplugin.permission:
+    default: true
+commands:
+  command:
+    permission: terribleplugin.permission
