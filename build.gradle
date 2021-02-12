@@ -30,6 +30,17 @@ processResources({
     }))
 })
 
+task buildToDevServer {
+    doLast {
+        processResources {
+            copy {
+                from "build/libs"
+                into "dev-server/data/plugins"
+            }
+        }
+    }
+}
+
 dependencies({
     compile($/org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT/$)
     compile($/com.github.ElgarL:groupmanager:2.9/$)
@@ -37,4 +48,6 @@ dependencies({
 
     testCompile(group: "junit", name: "junit", version: "4.12")
 })
+
 tasks.build.dependsOn(tasks.shadowJar)
+tasks.buildToDevServer.dependsOn(tasks.build)
