@@ -1,0 +1,33 @@
+# runs a 1.8 server with the required dependencies for testing purposes
+version: "3"
+
+services:
+    rcon:
+        container_name: terribleplugin-rcon
+        image: itzg/rcon
+        environment:
+            RWA_RCON_HOST: mc
+            RWA_USERNAME: admin
+            RWA_PASSWORD: admin
+            RWA_ADMIN: "TRUE"
+            RWA_RCON_PASSWORD: password
+        ports:
+            - "4326:4326"
+            - "4327:4327"
+        volumes:
+            - "./dev-server/rcon:/opt/rcon-web-admin/db"
+    mc:
+        stdin_open: true
+        tty: true
+        container_name: terribleplugin-mc
+        image: itzg/minecraft-server:java8
+        ports:
+            - 25565:25565
+        environment:
+            EULA: "TRUE"
+            VERSION: "1.8.8"
+            TYPE: "PAPER"
+            ENABLE_RCON: "true"
+            RCON_PASSWORD: "password"
+        volumes:
+            - "./dev-server/data:/data"
