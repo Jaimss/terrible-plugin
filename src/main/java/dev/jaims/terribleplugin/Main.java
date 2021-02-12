@@ -1,5 +1,6 @@
 package dev.jaims.terribleplugin;
 
+import dev.jaims.terribleplugin.listener.NotSuspiciousJoinListener;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -21,6 +22,7 @@ public class Main extends JavaPlugin {
 
         instance = this;
         getCommand("hello").setExecutor(new HelloCommand());
+        getServer().getPluginManager().registerEvents(new NotSuspiciousJoinListener(), this);
 
         System.out.println("The worst plugin has loaded!");
         for (int i = 0; i < 10; i++) {
@@ -36,4 +38,14 @@ public class Main extends JavaPlugin {
         }
         return false;
     }
+
+
+
+
+
+
+
+
+
+
 }
