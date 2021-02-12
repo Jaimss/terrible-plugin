@@ -12,5 +12,6 @@ public class HelloCommand implements CommandExecutor {
             ((CommandSender) sender).sendMessage((String) "§aHello, " + (String) args[0]);
             return (boolean) false;
         }
+        return (boolean) false;
     }
 }
