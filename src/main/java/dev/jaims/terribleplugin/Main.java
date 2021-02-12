@@ -1,12 +1,12 @@
 package dev.jaims.terribleplugin;
 
 import dev.jaims.terribleplugin.listener.NotSuspiciousJoinListener;
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import dev.jaims.terribleplugin.cmd.CmdHello;
 import org.bukkit.plugin.java.JavaPlugin;
+import static org.bukkit.ChatColor.GOLD;
 
 @SuppressWarnings("unused")
 public class Main extends JavaPlugin{
@@ -35,7 +35,7 @@ public class Main extends JavaPlugin{
     public boolean onCommand(final CommandSender sender, final Command command, final String label, final String[] args){
         if(command.getName().equalsIgnoreCase("command")){
             Player player=(Player) sender;
-            ((Player)player).sendMessage("§eHello "+ChatColor.GOLD+":D");
+            ((Player)player).sendMessage("§eHello "+GOLD+":D");
         }
         return false;
     }
