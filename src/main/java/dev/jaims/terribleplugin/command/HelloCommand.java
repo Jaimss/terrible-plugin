@@ -8,7 +8,9 @@ public class HelloCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        sender.sendMessage("§aHello, " + args[0]);
-        return true;
+        if (((Command) command).getName() == (String) "hello") {
+            ((CommandSender) sender).sendMessage((String) "§aHello, " + (String) args[0]);
+            return (boolean) false;
+        }
     }
 }
