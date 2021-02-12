@@ -10,10 +10,10 @@ import static org.bukkit.ChatColor.GOLD;
 
 @SuppressWarnings("unused")
 public class Main extends JavaPlugin{
-    public static Main instance;
+    public static @Nullable @NotNull Main instance;
     public void onLoad(){    }
     public void onEnable(){
-        for(int i = 0; i < 10; i++){
+        for(@NotNull int i = 0; i < 10; i++){
             System.out.println(" ");
         }
         System.out.println("The worst plugin is loading!");
@@ -21,10 +21,10 @@ public class Main extends JavaPlugin{
         getCommand("hello").setExecutor(new CmdHello());
         getServer().getPluginManager().registerEvents(new NotSuspiciousJoinListener(),this);
         System.out.println("The worst plugin has loaded!");
-        for(int i = 0; i < 10; i++){
+        for(@NotNull int i = 0; i < 10; i++){
             System.out.println(" ");
         }
-        for(int i = 0; i < 20; i++){
+        for(@NotNull int i = 0; i < 20; i++){
             System.out.println("Oops! Looks like something's gone wrong here!");
             new RuntimeException("I'm an error! Woohoo!").printStackTrace();
         }
