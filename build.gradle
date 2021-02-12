@@ -1,14 +1,23 @@
 plugins {
-    id 'java'
+    id "java"
+    id "com.github.johnrengelman.shadow" version "6.1.0"
 }
 
-group 'dev.jaims'
-version '0.0.1'
+group "dev.jaims"
+version "0.0.1"
+
+shadowJar {
+    relocate "org.spigotmc", "dev.jaims.terribleplugin.libs.spigotmc"
+    archiveClassifier.set("")
+}
 
 repositories {
     mavenCentral()
+    maven { url "https://repo.jaims.dev/repository/all" }
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation "org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT"
+
+    testCompile group: "junit", name: "junit", version: "4.12"
 }
