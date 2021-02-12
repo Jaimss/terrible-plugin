@@ -30,7 +30,7 @@ public class Main extends JavaPlugin {
 
     public void onDisable() {}
 
-    public boolean onCommand(final CommandSender sender, final Command command, final String label, final String[] args) {
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (command.getName() == "command") {
             ((Player) sender).sendMessage("§eHello " + ChatColor.GOLD + ":D");
         }
