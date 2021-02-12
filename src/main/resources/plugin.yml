@@ -1,0 +1,3 @@
+name: TerriblePlugin
+version: @version@
+main: dev.jaims.terribleplugin.Main
