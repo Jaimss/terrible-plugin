@@ -2,7 +2,11 @@ package dev.jaims.terribleplugin;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+@SuppressWarnings("unused")
 public class Main extends JavaPlugin {
+
+    @Override
+    public void onLoad() {}
 
     @Override
     public void onEnable() {
@@ -16,4 +20,6 @@ public class Main extends JavaPlugin {
             System.out.println(" ");
         }
     }
+    @Override
+    public void onDisable() {}
 }
