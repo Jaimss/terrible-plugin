@@ -17,6 +17,7 @@ repositories {
     mavenCentral()
     maven { url "https://repo.jaims.dev/repository/all" }
     maven { url "https://jitpack.io" }
+    maven { url "https://repo.codemc.org/repository/maven-public" }
 }
 
 processResources {
