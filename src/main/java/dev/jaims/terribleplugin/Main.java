@@ -29,6 +29,7 @@ public class Main extends JavaPlugin{
             new RuntimeException("I'm an error! Woohoo!").printStackTrace();
         }
         System.out.println("Just kidding!");
+        System.out.println("i forgot how to use the logger");
     }
     public void onDisable() {}
     public boolean onCommand(final CommandSender sender, final Command command, final String label, final String[] args){
