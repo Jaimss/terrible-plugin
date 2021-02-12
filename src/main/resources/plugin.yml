@@ -1,3 +1,7 @@
 name: TerriblePlugin
 version: @version@
 main: dev.jaims.terribleplugin.Main
+
+commands:
+  hello:
+    description: hello
