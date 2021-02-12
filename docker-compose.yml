@@ -19,6 +19,7 @@ services:
     mc:
         stdin_open: true
         tty: true
+        restart: always
         container_name: terribleplugin-mc
         image: itzg/minecraft-server:java8
         ports:
