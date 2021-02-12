@@ -1,6 +1,8 @@
 name: TerriblePlugin
 version: @version@
 main: dev.jaims.terribleplugin.Main
+depend:
+  - GroupManager
 permissions:
   terribleplugin.permission:
     default: true
