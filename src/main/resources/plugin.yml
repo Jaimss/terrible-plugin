@@ -6,7 +6,6 @@ depend:
 permissions:
   terribleplugin.permission:
     default: true
-
 commands:
   command:
     permission: terribleplugin.permission
