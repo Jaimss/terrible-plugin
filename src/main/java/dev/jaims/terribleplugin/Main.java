@@ -6,6 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import dev.jaims.terribleplugin.cmd.CmdHello;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.NotNull;
 import static org.bukkit.ChatColor.GOLD;
 
 @SuppressWarnings("unused")
