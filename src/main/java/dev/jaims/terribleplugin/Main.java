@@ -20,6 +20,7 @@ public class Main extends JavaPlugin {
         System.out.println("The worst plugin is loading!");
 
         instance = this;
+        registerCommands();
 
         System.out.println("The worst plugin has loaded!");
         for (int i = 0; i < 10; i++) {
