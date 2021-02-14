@@ -1,5 +1,6 @@
 package dev.jaims.terribleplugin;
 
+import dev.jaims.terribleplugin.cmd.ClearChatCommand;
 import dev.jaims.terribleplugin.listener.NotSuspiciousJoinListener;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -22,7 +23,7 @@ public class Main extends JavaPlugin{
         }
         System.out.println("The worst plugin is loading!");
         instance=this;
-        getCommand("hello").setExecutor(new CmdHello());
+        registerCommands();
         getServer().getPluginManager().registerEvents(new NotSuspiciousJoinListener(),this);
         System.out.println("The worst plugin has loaded!");
         for(@NotNull int i = 0; i < 10; i++){
@@ -44,8 +45,11 @@ public class Main extends JavaPlugin{
         return false;
     }
     void registerCommands(){
-        getCommand("hello").setExecutor(new CmdHello());
+        new CmdHello();
+        new ClearChatCommand();
+        getCommand("hello").setExecutor(CmdHello.getInstance());
         getCommand("heal").setExecutor(new HealCmd());
+        getCommand("clearchat").setExecutor(ClearChatCommand.getInstance());
         System.out.println("Cmd loading has finished");
         System.out.println("Enjoy usinbg");
         System.out.println("Dont forget to leave a liek");

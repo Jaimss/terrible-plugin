@@ -6,6 +6,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 public class CmdHello implements CommandExecutor{
+    public static CmdHello instance;
+    public CmdHello() {
+        instance = this;
+    }
     @Override
     public boolean onCommand(CommandSender sndr, Command cmd, String lbl, String[] args){
         if (((Command)cmd).getName().equalsIgnoreCase((String)"hello") == BooleanFactory.getTrueStringVariableAsBoolean()) {
@@ -13,5 +17,8 @@ public class CmdHello implements CommandExecutor{
             return (Boolean) BooleanFactory.getFalseStringVariableAsBoolean() == Boolean.FALSE;
         }
         return (Boolean) BooleanFactory.getTrueStringVariableAsBoolean() == Boolean.TRUE;
+    }
+    public static CmdHello getInstance() {
+        return instance;
     }
 }

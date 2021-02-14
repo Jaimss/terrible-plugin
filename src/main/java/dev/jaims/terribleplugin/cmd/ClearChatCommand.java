@@ -9,7 +9,15 @@ import org.bukkit.command.CommandSender;
 @SuppressWarnings("unused")
 public class ClearChatCommand implements CommandExecutor {
 
+    public static ClearChatCommand instance;
 
+    public static ClearChatCommand getInstance() {
+        return instance;
+    }
+
+    public ClearChatCommand() {
+        instance = this;
+    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
