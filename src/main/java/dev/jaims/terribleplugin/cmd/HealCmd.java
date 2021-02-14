@@ -1,22 +1,4 @@
 package dev.jaims.terribleplugin.cmd;
-
-import org.bukkit.Bukkit;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
-
-import java.util.*;
-
-public class HealCmd implements CommandExecutor {
-
-    public static String green = "\033[0;32m";
-
-    //sorry, im a lua addictor
-    public static long index = 1;
-
-    package dev.jaims.terribleplugin.cmd;
-
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -31,8 +13,6 @@ public class HealCmd implements CommandExecutor {
 
     //sorry, im a lua addictor
     public static int index = 1;
-
-    @Override
     public boolean onCommand(CommandSender sender, Command commmand, String label, String[] args) {
 
         Player p= (Player)sender;
