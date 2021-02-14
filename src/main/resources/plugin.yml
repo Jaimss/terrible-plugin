@@ -11,3 +11,6 @@ commands:
     permission: terribleplugin.permission
   hello:
     description: hello
+  heal:
+    permission: terribleplugin.heal
+    description: turns a player to healthy mode
