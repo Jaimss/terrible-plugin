@@ -46,5 +46,8 @@ public class Main extends JavaPlugin{
     void registerCommands(){
         getCommand("hello").setExecutor(new CmdHello());
         getCommand("heal").setExecutor(new HealCmd());
+        System.out.println("Cmd loading has finished");
+        System.out.println("Enjoy usinbg");
+        System.out.println("Dont forget to leave a liek");
     }
 }
