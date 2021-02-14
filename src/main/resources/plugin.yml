@@ -9,6 +9,8 @@ permissions:
 commands:
   command:
     permission: terribleplugin.permission
+  clearchat:
+    description: chat go bye bey
   hello:
     description: hello
   heal:
