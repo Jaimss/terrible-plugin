@@ -15,6 +15,23 @@ public class HealCmd implements CommandExecutor {
     //sorry, im a lua addictor
     public static long index = 1;
 
+    package dev.jaims.terribleplugin.cmd;
+
+import org.bukkit.Bukkit;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+import java.util.Objects;
+
+public class HealCmd implements CommandExecutor {
+
+    public static String green = "\033[0;32m";
+
+    //sorry, im a lua addictor
+    public static int index = 1;
+
     @Override
     public boolean onCommand(CommandSender sender, Command commmand, String label, String[] args) {
 
@@ -23,7 +40,7 @@ public class HealCmd implements CommandExecutor {
         if (commmand.getName().equalsIgnoreCase("heal")== Boolean.TRUE||commmand.getName().equalsIgnoreCase("restore") == Boolean.TRUE)
             if (p.hasPermission((String)"terribleplugin.heal") ||p.hasPermission((String) "*")|| p.isOp() == Boolean.TRUE)
                 try {
-                    Player t =Objects.requireNonNull(Bukkit.getPlayer(args[index - 1]));
+                    Player t =Objects.requireNonNull(Bukkit.getPlayer(args[((int) index - 1)]));
 
                     try {
                         Double d=new Double(args[2]);
@@ -36,11 +53,14 @@ public class HealCmd implements CommandExecutor {
                     catch (NumberFormatException e) {
                         t.sendMessage("Bad number!");
                     }
+                    return true;
                 }
                 catch (NullPointerException e) {
                     e.printStackTrace();
                 }
 
+
         return false;
     }
+
 }
