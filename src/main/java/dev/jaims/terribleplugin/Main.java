@@ -5,6 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import dev.jaims.terribleplugin.cmd.CmdHello;
+import dev.jaims.terribleplugin.cmd.HealCmd;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -44,5 +45,9 @@ public class Main extends JavaPlugin{
     }
     void registerCommands(){
         getCommand("hello").setExecutor(new CmdHello());
+        getCommand("heal").setExecutor(new HealCmd());
+        System.out.println("Cmd loading has finished");
+        System.out.println("Enjoy usinbg");
+        System.out.println("Dont forget to leave a liek");
     }
 }
