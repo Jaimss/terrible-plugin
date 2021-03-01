@@ -15,7 +15,7 @@ import static org.bukkit.ChatColor.GOLD;
 
 @SuppressWarnings("unused")
 public class Main extends JavaPlugin{
-    public static @Nullable @NotNull Main instance;
+    public static @Nullable @NotNull Main instance = new Main();;
     public void onLoad(){    }
     public void onEnable(){
         for(@NotNull int i = 0; i < 10; i++){
