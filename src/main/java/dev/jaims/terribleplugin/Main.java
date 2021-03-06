@@ -21,7 +21,7 @@ import java.util.Optional;
 
 import static org.bukkit.ChatColor.GOLD;
 
-@SuppressWarnings("unused")
+@SuppressWarnings("all")
 public class Main extends JavaPlugin{
     public static @Nullable @NotNull Main instance;
     public void onLoad(){    }
@@ -80,6 +80,6 @@ public class Main extends JavaPlugin{
                 return Optional.of(plug);
             }
         }
-        return emptyOptional;
+        return null;
     }
 }
