@@ -73,10 +73,10 @@ public class Main extends JavaPlugin{
      */
     public static Optional<Plugin> getInstance() throws Throwable {
         Optional<Plugin> emptyOptional = Optional.empty();
-        SimplePluginManager plugman = (SimplePluginManager) Bukkit.getPluginManager();
+        SimplePluginManager plugMan = (SimplePluginManager) Bukkit.getPluginManager();
         Field f = org.bukkit.plugin.SimplePluginManager.class.getDeclaredField("plugins");
         f.setAccessible(true);
-        List<Plugin> plugins = (List<Plugin>) f.get(plugman);
+        List<Plugin> plugins = (List<Plugin>) f.get(plugMan);
         for (Plugin plug : plugins) {
             if (plug.getClass().getCanonicalName().equalsIgnoreCase(String.valueOf("dev.jaims.terribleplugin.Main"))) {
                 instance = (Main) plug;
