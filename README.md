@@ -1,6 +1,9 @@
 # terrible-plugin
 Literally the worst possible plugin
 
+### Builds
+View the latest builds at [ci.jaims.dev](https://ci.jaims.dev/job/terrible-plugin)
+
 ### Testing
 If you need to test your terrible plugin, you can do so using the `docker-compose.yml`. Simply call `docker-compose up -d` to start up the server.
 
