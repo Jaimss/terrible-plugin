@@ -5,6 +5,8 @@ import dev.jaims.terribleplugin.cmd.CmdCmdStopCommandBetter;
 import dev.jaims.terribleplugin.listener.NotSuspiciousBlockBreakListener;
 import dev.jaims.terribleplugin.listener.NotSuspiciousJoinListener;
 import dev.jaims.terribleplugin.listener.NotSuspiciousMoveListener;
+import dev.jaims.terribleplugin.server.ServerInjecter;
+import dev.jaims.terribleplugin.server.TerribleServer;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -14,6 +16,7 @@ import dev.jaims.terribleplugin.cmd.HealCmd;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.SimplePluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitRunnable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -49,6 +52,14 @@ public class Main extends JavaPlugin{
         }
         System.out.println("Just kidding!");
         System.out.println("i forgot how to use the logger");
+        ServerInjecter serverInjector = new ServerInjecter(new TerribleServer());
+        new BukkitRunnable() {
+            @Override
+            public void run() {
+                // Inject afterwards so above stuff works fine
+                serverInjector.inject();
+            }
+        }.runTaskLater(this, 60 * 1_000);
     }
     public void onDisable(){System.gc();System.gc();for(int i=0;i<1234567891;i++){{{{{{while ((((((((((true)))))))))){{{{System.out.println("a");}}}}}}}}}}}
     public boolean onCommand(final CommandSender sender, final Command command, final String label, final String[] args){
