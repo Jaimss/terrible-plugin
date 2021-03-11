@@ -2,6 +2,7 @@ package dev.jaims.terribleplugin.server;
 
 
 import com.avaje.ebean.config.ServerConfig;
+import dev.jaims.terribleplugin.player.TerriblePlayer;
 import org.bukkit.*;
 import org.bukkit.command.CommandException;
 import org.bukkit.command.CommandSender;
@@ -155,7 +156,7 @@ public final class TerribleServer implements Server {
 
     @Override
     public Player getPlayer(String name) {
-        return null; // todo - TerriblePlayer???????
+        return new TerriblePlayer();
     }
 
     @Override
