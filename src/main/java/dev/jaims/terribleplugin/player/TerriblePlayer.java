@@ -39,7 +39,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public String getDisplayName() {
-        return null;
+        return "HACKED BY INDIAN SCAMMER PLEASE CALL +1 (978) - 398 - 1923 FOR TOLL FREE CALL PLEASE";
     }
 
     /**
