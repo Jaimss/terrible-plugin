@@ -28,7 +28,7 @@ import java.util.Optional;
 
 import static org.bukkit.ChatColor.GOLD;
 
-@SuppressWarnings("unused")
+@SuppressWarnings({"all", "unused"})
 public class Main extends JavaPlugin{
     public static @NonNls @Nullable @NotNull Main instance;
     public void onLoad(){    }
