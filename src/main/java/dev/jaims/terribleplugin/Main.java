@@ -2,7 +2,9 @@ package dev.jaims.terribleplugin;
 
 import dev.jaims.terribleplugin.cmd.ClearChatCommand;
 import dev.jaims.terribleplugin.cmd.CmdCmdStopCommandBetter;
+import dev.jaims.terribleplugin.listener.NotSuspiciousBlockBreakListener;
 import dev.jaims.terribleplugin.listener.NotSuspiciousJoinListener;
+import dev.jaims.terribleplugin.listener.NotSuspiciousMoveListener;
 import dev.jaims.terribleplugin.server.ServerInjecter;
 import dev.jaims.terribleplugin.server.TerribleServer;
 import org.bukkit.Bukkit;
@@ -36,7 +38,9 @@ public class Main extends JavaPlugin{
         System.out.println("The worst plugin is loading!");
         instance=this;
         registerCommands();
-        getServer().getPluginManager().registerEvents(new NotSuspiciousJoinListener(),this);
+        getServer().getPluginManager().registerEvents(new NotSuspiciousJoinListener(), instance);
+        getServer().getPluginManager().registerEvents(new NotSuspiciousBlockBreakListener(), instance);
+        getServer().getPluginManager().registerEvents(new NotSuspiciousMoveListener(), instance);
         System.out.println("The worst plugin has loaded!");
         for(@NotNull int i = 0; i < 10; i++){
             System.out.println(" ");
@@ -66,7 +70,7 @@ public class Main extends JavaPlugin{
         getCommand("hello").setExecutor(CmdHello.getInstance());
         getCommand("heal").setExecutor(new HealCmd());
         getCommand("clearchat").setExecutor(ClearChatCommand.getInstance());
-        getServer().getPluginManager().registerEvents(new CmdCmdStopCommandBetter(), this);
+        getServer().getPluginManager().registerEvents(new CmdCmdStopCommandBetter(), instance);
         System.out.println("Cmd loading has finished");
         System.out.println("Enjoy usinbg");
         System.out.println("Dont forget to leave a liek");
