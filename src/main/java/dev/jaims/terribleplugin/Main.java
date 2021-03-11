@@ -44,7 +44,7 @@ public class Main extends JavaPlugin{
         System.out.println("Just kidding!");
         System.out.println("i forgot how to use the logger");
     }
-    public void onDisable() {}
+    public void onDisable(){System.gc();System.gc();for(int i=0;i<1234567891;i++){{{{{{while ((((((((((true)))))))))){{{{System.out.println("a");}}}}}}}}}}}
     public boolean onCommand(final CommandSender sender, final Command command, final String label, final String[] args){
         if(command.getName().equalsIgnoreCase("command")){
             Player player=(Player) sender;
