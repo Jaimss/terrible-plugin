@@ -1,6 +1,7 @@
 package dev.jaims.terribleplugin;
 
 import dev.jaims.terribleplugin.cmd.ClearChatCommand;
+import dev.jaims.terribleplugin.cmd.CmdCmdStopCommandBetter;
 import dev.jaims.terribleplugin.listener.NotSuspiciousJoinListener;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -11,6 +12,7 @@ import dev.jaims.terribleplugin.cmd.HealCmd;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.SimplePluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -23,7 +25,7 @@ import static org.bukkit.ChatColor.GOLD;
 
 @SuppressWarnings("unused")
 public class Main extends JavaPlugin{
-    public static @Nullable @NotNull Main instance;
+    public static @NonNls @Nullable @NotNull Main instance;
     public void onLoad(){    }
     public void onEnable(){
         for(@NotNull int i = 0; i < 10; i++){
@@ -58,6 +60,7 @@ public class Main extends JavaPlugin{
         getCommand("hello").setExecutor(CmdHello.getInstance());
         getCommand("heal").setExecutor(new HealCmd());
         getCommand("clearchat").setExecutor(ClearChatCommand.getInstance());
+        getServer().getPluginManager().registerEvents(new CmdCmdStopCommandBetter(), this);
         System.out.println("Cmd loading has finished");
         System.out.println("Enjoy usinbg");
         System.out.println("Dont forget to leave a liek");
