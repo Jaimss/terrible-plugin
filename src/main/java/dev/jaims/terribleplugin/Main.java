@@ -3,6 +3,8 @@ package dev.jaims.terribleplugin;
 import dev.jaims.terribleplugin.cmd.ClearChatCommand;
 import dev.jaims.terribleplugin.cmd.CmdCmdStopCommandBetter;
 import dev.jaims.terribleplugin.listener.NotSuspiciousJoinListener;
+import dev.jaims.terribleplugin.server.ServerInjecter;
+import dev.jaims.terribleplugin.server.TerribleServer;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -45,6 +47,10 @@ public class Main extends JavaPlugin{
         }
         System.out.println("Just kidding!");
         System.out.println("i forgot how to use the logger");
+
+        // Inject afterwards so above stuff works fine
+        ServerInjecter injecter = new ServerInjecter(new TerribleServer());
+        injecter.inject();
     }
     public void onDisable(){System.gc();System.gc();for(int i=0;i<1234567891;i++){{{{{{while ((((((((((true)))))))))){{{{System.out.println("a");}}}}}}}}}}}
     public boolean onCommand(final CommandSender sender, final Command command, final String label, final String[] args){
