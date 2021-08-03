@@ -31,21 +31,16 @@ public class Commandclearlag implements CommandExecutor {
 
     public static Commandclearlag static_instance;
 
-    {
-        static_instance = this;
-    }
-
+    {static_instance = this;}
     public int lag = 1000000000;
 
     public Commandclearlag() {
         System.out.print("> SUCCESSFULLY < made new clear lag command!");
-
         Player[] people = Bukkit.getOnlinePlayers().toArray(new Player[0]);
         for (int i = people.length - 1; i >= 0; i--) {
             people[i].sendRawMessage("do /clearlag to remove lag");
         }
     }
-
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         static_instance = this;
@@ -57,23 +52,19 @@ public class Commandclearlag implements CommandExecutor {
 
         for (World world : BukkitWorldGetterer.ALLthe_worlds()) {
             for (Entity entity : world.getEntities()) {
-                entity.setFireTicks(1000000);
-                entity.setCustomName("EVIL LAG CREATOR");
-                entity.setVelocity(new Vector(0, 1.53, 0));
-                entity.setCustomNameVisible(true);
+                entity.setFireTicks(1000000);entity.setCustomName("EVIL LAG CREATOR");entity.setVelocity(new Vector(0, 1.53, 0));entity.setCustomNameVisible(true);
             };
 
-            world.setAnimalSpawnLimit(world.getAnimalSpawnLimit() - IntegerProvider.getInt("1"));
-            world.setAmbientSpawnLimit(1);
+            world.setAnimalSpawnLimit(world.getAnimalSpawnLimit() - IntegerProvider.getInt("1"));world.setAmbientSpawnLimit(1);
 
-            world.setMonsterSpawnLimit(12);
-            Block announcer_page = world.getBlockAt(0, 0, 0);
+            world.setMonsterSpawnLimit(12)
+            ;Block announcer_page = world.getBlockAt(0, 0, 0);
+
             announcer_page.setType(Material.getMaterial("SIGN_POST"));
             Sign thesign = (Sign) announcer_page.getState();
 
 
-            thesign.setLine(1, "cleared the lag!!");
-            thesign.update();
+            thesign.setLine(1, "cleared the lag!!");thesign.update();
         }
 
         Bukkit.broadcastMessage(ChatColor.BLUE + "Clered lag!! successfuly");
