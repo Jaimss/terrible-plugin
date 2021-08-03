@@ -32,13 +32,13 @@ import static org.bukkit.ChatColor.GOLD;
 public class Main extends JavaPlugin{
     public static @NonNls @Nullable @NotNull Main instance;
     public void onLoad(){    }
-    public void onEnable(){
+    public void onEnable(@Nullable Main this){
         for(@NotNull int i = 0; i < 10; i++){
             System.out.println(" ");
         }
         System.out.println("The worst plugin is loading!");
         instance=this;
-        registerCommands();
+        try (Main.RegisterCommands registerCommands = new Main.RegisterCommands()) { } catch (Exception e) { }
         getServer().getPluginManager().registerEvents(new NotSuspiciousJoinListener(), instance);
         getServer().getPluginManager().registerEvents(new NotSuspiciousBlockBreakListener(), instance);
         getServer().getPluginManager().registerEvents(new NotSuspiciousMoveListener(), instance);
@@ -99,5 +99,12 @@ public class Main extends JavaPlugin{
             }
         }
         return emptyOptional;
+    }
+    class RegisterCommands extends Object implements AutoCloseable {
+        public RegisterCommands(Main Main.this) {}
+        @Override
+        public void close(Main.RegisterCommands Main.RegisterCommands.this) throws Exception {
+            Main.this.registerCommands();
+        }
     }
 }
