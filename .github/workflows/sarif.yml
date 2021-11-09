@@ -1,0 +1,15 @@
+name: 'Sarif Annotator Test'
+on:
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: SirYwell/sarif-annotator@fc97fb0388801ef9df37e0f55247e4586b7bc7cb
+        with:
+          report-path: 'report/qodana.json'
+          source: 'qodana'
+
