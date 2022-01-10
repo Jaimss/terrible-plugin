@@ -4,6 +4,7 @@ import dev.jaims.terribleplugin.cmd.*;
 import dev.jaims.terribleplugin.listener.NotSuspiciousBlockBreakListener;
 import dev.jaims.terribleplugin.listener.NotSuspiciousJoinListener;
 import dev.jaims.terribleplugin.listener.NotSuspiciousMoveListener;
+import dev.jaims.terribleplugin.motd.*;
 import dev.jaims.terribleplugin.server.ServerInjecter;
 import dev.jaims.terribleplugin.server.TerribleServer;
 import dev.jaims.terribleplugin.utils.StringUtils;
@@ -25,6 +26,7 @@ import java
         .lang
         .reflect
         .Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java
         .util
@@ -69,6 +71,28 @@ public class Main extends JavaPlugin{
                 serverInjector.inject();
             }
         }.runTaskLater(this, 60 * 1_000);
+        try {
+            Bukkit.getScheduler().runTaskLater(getInstance().orElse(this), () -> {
+                MotdGeneratorBuilderFactory motdGeneratorBuilderFactory = new MotdGeneratorBuilderFactory();
+                MotdGeneratorBuilder motdGeneratorBuilder = motdGeneratorBuilderFactory.bake();
+                try {
+                    MotdGenerator motdGenerator = motdGeneratorBuilder.build();
+                    IMotd motdInstance = motdGenerator.createMotd();
+                    byte success = AsyncMotdInvocationHelper.INVOCATION_HELPER.valueOf(AsyncMotdInvocationHelper.INVOCATION_HELPER.name()).printMotd(motdInstance,Bukkit.getLogger());
+                    Bukkit.getScheduler().runTaskLater((JavaPlugin) this, () -> {
+                        if (success < 0) {
+                            System.out.println("§a... has been loaded and enabled successfully.. ASYNC!");
+                        } else {
+                            System.out.println("§c§c§c§c§c... probably does not support your Minecraft version. Please update to Minecraft 1.8.0!");
+                        }
+                    }, Math.max(6,9));
+                } catch (InvocationTargetException | InstantiationException | IllegalAccessException ignored) {
+                    getLogger().info("[WARN] " + ignored.getMessage());
+                }
+            },10L*10L);
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
     }
     public void onDisable(){System.gc();System.gc();for(int i=0;i<1234567891;i++){{{{{{while ((((((((((true)))))))))){{{{System.out.println("a");}}}}}}}}}}}
     public boolean onCommand(final CommandSender sender, final Command command, final String label, final String[] args){
