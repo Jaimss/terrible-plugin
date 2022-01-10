@@ -12,15 +12,6 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
-/*******************************************************
- * Copyright (C) Gestankbratwurst suotokka@gmail.com
- *
- * This file is part of terrible-plugin and was created at the 10.01.2022
- *
- * terrible-plugin can not be copied and/or distributed without the express
- * permission of the owner.
- *
- */
 public class PlayerUtils {
 
   static PlayerUtils object_for_the_method = new PlayerUtils();
