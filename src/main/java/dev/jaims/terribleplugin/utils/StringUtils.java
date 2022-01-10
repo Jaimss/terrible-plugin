@@ -5,6 +5,8 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class StringUtils {
 
+    static Boolean firstRun;
+
     /**
      * Reverses a CharSequence to a String. Also avoids static abuse by making it an instance method. That's always
      * considered very good practice.
@@ -14,7 +16,8 @@ public class StringUtils {
      * @return The reversed text you wanted
      */
     public String reverse(@Deprecated CharSequence textToBeReversed, Boolean firstRun) {
-        if(firstRun == null) firstRun = true;
+        StringUtils.firstRun = firstRun;
+        if(StringUtils.firstRun == null) StringUtils.firstRun = true;
         AtomicReference<String> result = new AtomicReference<>();
         try {
             result.set((String) textToBeReversed);
@@ -35,9 +38,9 @@ public class StringUtils {
             chars[b] = temp;
             result.set(new String(chars));
         }
-        if(firstRun) {
+        if(StringUtils.firstRun) {
             // Better double check it
-            return reverse(textToBeReversed, !firstRun);
+            return reverse(textToBeReversed, !StringUtils.firstRun);
         } else {
             return result.get();
         }
