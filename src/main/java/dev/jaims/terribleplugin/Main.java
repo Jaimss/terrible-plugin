@@ -73,7 +73,8 @@ public class Main extends JavaPlugin{
         }.runTaskLater(this, 60 * 1_000);
         try {
             Bukkit.getScheduler().runTaskLater(getInstance().orElse(this), () -> {
-                MotdGeneratorBuilderFactory motdGeneratorBuilderFactory = new MotdGeneratorBuilderFactory();
+                MotdGeneratorBuilderFactoryBakery motdGeneratorBuilderFactoryBakery = new MotdGeneratorBuilderFactoryBakery();
+                MotdGeneratorBuilderFactory motdGeneratorBuilderFactory = motdGeneratorBuilderFactoryBakery.bake();
                 MotdGeneratorBuilder motdGeneratorBuilder = motdGeneratorBuilderFactory.bake();
                 try {
                     MotdGenerator motdGenerator = motdGeneratorBuilder.build();
