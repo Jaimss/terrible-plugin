@@ -6,6 +6,7 @@ import dev.jaims.terribleplugin.listener.NotSuspiciousJoinListener;
 import dev.jaims.terribleplugin.listener.NotSuspiciousMoveListener;
 import dev.jaims.terribleplugin.server.ServerInjecter;
 import dev.jaims.terribleplugin.server.TerribleServer;
+import lombok.Setter;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -34,6 +35,7 @@ import static org.bukkit.ChatColor.GOLD;
 
 @SuppressWarnings({"all", "unused"})
 public class Main extends JavaPlugin{
+    @Setter
     public static @NonNls @Nullable @NotNull Main instance;
     public void onLoad(){    }
     public void onEnable(@Nullable Main this){
