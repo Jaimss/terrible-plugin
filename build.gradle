@@ -41,6 +41,18 @@ task buildToDevServer {
     }
 }
 
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.22'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
+}
+
 dependencies({
     compile($/org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT/$)
     compile($/com.github.ElgarL:groupmanager:2.9/$)
