@@ -1,7 +1,7 @@
 package dev.jaims.terribleplugin.motd;
 
-public class AbstractMotdGenerator {
+public abstract class AbstractMotdGenerator {
 
-
+    public abstract IMotd createMotd();
 
 }
