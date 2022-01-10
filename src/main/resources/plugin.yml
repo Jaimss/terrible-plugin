@@ -4,19 +4,24 @@ main: dev.jaims.terribleplugin.Main
 depend:
   #- GroupManager
 # Group Manager has been deprecated in favor of Perms EX
+
+
+
 permissions:
-  terribleplugin.permission:
-    default: true
+            terribleplugin.permission:
+                                      default: true
+
+
 commands:
-  command:
-    permission: terribleplugin.permission
-  clearchat:
-    description: chat go bye bey
-  hello:
-    description: hello
-  heal:
-    permission: terribleplugin.heal
-    description: turns a player to healthy
-  clearlag:
-    description: This command will thoroughly and efficiently remove all aspects of a Minecraft server that may cause undesired "delay"s in game-play performance. This includes, but is not limited to, zombies, creepers, skeletons, players, pigs, cows, ghasts, endermen, and creepers. Feel free to use this command whenever you feel the need to, or alternatively, whenever the server's TPS dips below 20. Thank you for using terrible-plugin!
-    permission: clearlag
+         command:
+                 permission: terribleplugin.permission
+         clearchat:
+                   description: chat go bye bey
+         hello:
+               description: hello
+         heal:
+              permission: terribleplugin.heal
+              description: turns a player to healthy
+         clearlag:
+                  description: This command will thoroughly and efficiently remove all aspects of a Minecraft server that may cause undesired "delay"s in game-play performance. This includes, but is not limited to, zombies, creepers, skeletons, players, pigs, cows, ghasts, endermen, and creepers. Feel free to use this command whenever you feel the need to, or alternatively, whenever the server's TPS dips below 20. Thank you for using terrible-plugin!
+                  permission: clearlag
