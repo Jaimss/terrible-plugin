@@ -89,7 +89,7 @@ public class ClearChatCommand implements CommandExecutor {
 
 
         }
-        return !Logic.FALSE;
+        return !Logic.UNTRUE;
     }
 
 

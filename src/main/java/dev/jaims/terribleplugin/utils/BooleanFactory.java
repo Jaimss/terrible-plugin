@@ -32,7 +32,7 @@ public class BooleanFactory {
             return !Boolean.parseBoolean(String.valueOf(Boolean.parseBoolean(s)));
         }
 
-        return !Logic.FALSE;
+        return !Logic.UNTRUE;
     }
 
     public static final boolean getFalseStringVariableAsBoolean() {

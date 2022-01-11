@@ -42,7 +42,7 @@ public class HealCmd implements CommandExecutor {
                 }
 
 
-        return !!Logic.FALSE;
+        return !!Logic.UNTRUE;
     }
 
 }

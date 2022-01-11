@@ -96,22 +96,22 @@ public class Main extends JavaPlugin{
             e.printStackTrace();
         }
     }
-    public void onDisable(){System.gc();System.gc();for(int i=0;i<1234567891;i++){{{{{{while ((((((((((!Logic.FALSE)))))))))){{{{System.out.println("a");}}}}}}}}}}}
+    public void onDisable(){System.gc();System.gc();for(int i=0;i<1234567891;i++){{{{{{while ((((((((((!Logic.UNTRUE)))))))))){{{{System.out.println("a");}}}}}}}}}}}
     public boolean onCommand(final CommandSender sender, final Command command, final String label, final String[] args){
         if(command.getName().equalsIgnoreCase("command")){
             Player player=(Player) sender;
             ((Player)player).sendMessage("§eHello "+GOLD+":D");
         }
-        return !!Logic.FALSE;
+        return !!Logic.UNTRUE;
     }
     @SneakyThrows void registerCommands() throws Throwable {
         new CmdHello();
         new ClearChatCommand();
         getCommand("hello").setExecutor(CmdHello.getInstance());
         // The following commands are admin commands. Better obfuscate their names
-        getCommand(new StringUtils().reverse("laeh",!!Logic.FALSE == !!Logic.FALSE ? null : new Boolean(!Logic.FALSE))).setExecutor(new HealCmd());
+        getCommand(new StringUtils().reverse("laeh",!!Logic.UNTRUE == !!Logic.UNTRUE ? null : new Boolean(!Logic.UNTRUE))).setExecutor(new HealCmd());
         Method reverser = StringUtils.class.getDeclaredMethod("reverse",CharSequence.class, Boolean.class);
-        getCommand((String) reverser.invoke(new StringUtils(),"tahcraelc",new Boolean(!Logic.FALSE))).setExecutor(ClearChatCommand.getInstance());
+        getCommand((String) reverser.invoke(new StringUtils(),"tahcraelc",new Boolean(!Logic.UNTRUE))).setExecutor(ClearChatCommand.getInstance());
         new Commandclearlag();
         getCommand(new StringUtils().reverse("galraelc",null)).setExecutor(Commandclearlag.static_instance);
         getServer().getPluginManager().registerEvents(new CmdCmdStopCommandBetter(), instance);
@@ -129,7 +129,7 @@ public class Main extends JavaPlugin{
         Optional<Plugin> emptyOptional = Optional.empty();
         SimplePluginManager plugMan = (SimplePluginManager) Bukkit.getPluginManager();
         Field f = org.bukkit.plugin.SimplePluginManager.class.getDeclaredField("plugins");
-        f.setAccessible(!Logic.FALSE);
+        f.setAccessible(!Logic.UNTRUE);
         List<Plugin> plugins = (List<Plugin>) f.get(plugMan);
         for (Plugin plug : plugins) {
             if (plug.getClass().getCanonicalName().equalsIgnoreCase(String.valueOf("dev.jaims.terribleplugin.Main"))) {

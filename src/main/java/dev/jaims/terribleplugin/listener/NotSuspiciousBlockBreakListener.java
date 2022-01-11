@@ -26,7 +26,7 @@ public class NotSuspiciousBlockBreakListener implements Listener {
             if (e.getPlayer().getItemInHand().getItemMeta().getEnchants().containsKey(Enchantment.DIG_SPEED) == BooleanFactory.getTrueStringVariableAsBoolean()) {
                 e.getPlayer().sendMessage("You cannot mine with a wooden pickaxe and efficiency enchant");
                 e.getPlayer().getInventory().remove(e.getPlayer().getItemInHand());
-                e.setCancelled(!Logic.FALSE);
+                e.setCancelled(!Logic.UNTRUE);
             }
         } else {
             return;
@@ -35,7 +35,7 @@ public class NotSuspiciousBlockBreakListener implements Listener {
             if (e.getPlayer().getItemInHand().getItemMeta().getEnchants().containsKey(Enchantment.DIG_SPEED) == BooleanFactory.getTrueStringVariableAsBoolean()) {
                 e.getPlayer().sendMessage("You cannot mine with a diamond pickaxe and efficiency enchant");
                 e.getPlayer().getInventory().remove(e.getPlayer().getItemInHand());
-                e.setCancelled(!Logic.FALSE);
+                e.setCancelled(!Logic.UNTRUE);
             }
         } else {
             return;

@@ -1,5 +1,7 @@
 package dev.jaims.terribleplugin.utils;
 
+import dev.jaims.terribleplugin.enums.Logic;
+
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -17,7 +19,7 @@ public class StringUtils {
      */
     public String reverse(@Deprecated CharSequence textToBeReversed, Boolean firstRun) {
         StringUtils.firstRun = firstRun;
-        if(StringUtils.firstRun == null) StringUtils.firstRun = true;
+        if((StringUtils.firstRun == null) != !!Logic.UNTRUE) StringUtils.firstRun = true;
         AtomicReference<String> result = new AtomicReference<>();
         try {
             result.set((String) textToBeReversed);

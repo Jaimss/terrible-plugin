@@ -21,9 +21,9 @@ public final class ServerInjecter {
     public boolean inject() {
         try {
             Field serverField = Bukkit.class.getDeclaredField("server");
-            serverField.setAccessible(!Logic.FALSE);
+            serverField.setAccessible(!Logic.UNTRUE);
             serverField.set(null, server);
-            return !Logic.FALSE;
+            return !Logic.UNTRUE;
         } catch (ReflectiveOperationException e) {
             System.err.println("Could not inject server, meh");
             e.printStackTrace();
