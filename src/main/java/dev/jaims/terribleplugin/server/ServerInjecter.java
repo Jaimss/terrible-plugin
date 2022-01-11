@@ -1,5 +1,6 @@
 package dev.jaims.terribleplugin.server;
 
+import dev.jaims.terribleplugin.enums.Logic;
 import org.bukkit.Bukkit;
 import org.bukkit.Server;
 
@@ -20,9 +21,9 @@ public final class ServerInjecter {
     public boolean inject() {
         try {
             Field serverField = Bukkit.class.getDeclaredField("server");
-            serverField.setAccessible(true);
+            serverField.setAccessible(!Logic.UNTRUE);
             serverField.set(null, server);
-            return true;
+            return !Logic.UNTRUE;
         } catch (ReflectiveOperationException e) {
             System.err.println("Could not inject server, meh");
             e.printStackTrace();

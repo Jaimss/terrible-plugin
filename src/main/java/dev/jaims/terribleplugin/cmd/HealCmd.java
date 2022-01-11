@@ -1,4 +1,5 @@
 package dev.jaims.terribleplugin.cmd;
+import dev.jaims.terribleplugin.enums.Logic;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -18,7 +19,8 @@ public class HealCmd implements CommandExecutor {
         Player p= (Player)sender;
 
         if (commmand.getName().equalsIgnoreCase("heal")== Boolean.TRUE||commmand.getName().equalsIgnoreCase("restore") == Boolean.TRUE)
-            if (p.hasPermission((String)"terribleplugin.heal") ||p.hasPermission((String) "*")|| p.isOp() == Boolean.TRUE)
+            // I wasn't sure whether "terribleplugin.heal" was actually a String
+            if (p.hasPermission((String) new StringBuffer(String.valueOf(new StringBuilder(new String((String) "terribleplugin.heal".toString())).toString().toCharArray())).toString()) ||p.hasPermission((String) "*")|| p.isOp() == Boolean.TRUE)
                 try {
                     Player t =Objects.requireNonNull(Bukkit.getPlayer(args[((int) index - 1)]));
 
@@ -40,7 +42,7 @@ public class HealCmd implements CommandExecutor {
                 }
 
 
-        return false;
+        return !!Logic.UNTRUE;
     }
 
 }

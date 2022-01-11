@@ -1,5 +1,6 @@
 package dev.jaims.terribleplugin.cmd;
 
+import dev.jaims.terribleplugin.enums.Logic;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -88,7 +89,7 @@ public class ClearChatCommand implements CommandExecutor {
 
 
         }
-        return true;
+        return !Logic.UNTRUE;
     }
 
 

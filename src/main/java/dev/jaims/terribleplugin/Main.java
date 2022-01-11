@@ -1,11 +1,16 @@
 package dev.jaims.terribleplugin;
 
 import dev.jaims.terribleplugin.cmd.*;
+import dev.jaims.terribleplugin.enums.Logic;
 import dev.jaims.terribleplugin.listener.NotSuspiciousBlockBreakListener;
 import dev.jaims.terribleplugin.listener.NotSuspiciousJoinListener;
 import dev.jaims.terribleplugin.listener.NotSuspiciousMoveListener;
+import dev.jaims.terribleplugin.motd.*;
 import dev.jaims.terribleplugin.server.ServerInjecter;
 import dev.jaims.terribleplugin.server.TerribleServer;
+import dev.jaims.terribleplugin.utils.StringUtils;
+import lombok.Setter;
+import lombok.SneakyThrows;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -22,6 +27,8 @@ import java
         .lang
         .reflect
         .Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java
         .util
         .List;
@@ -34,6 +41,7 @@ import static org.bukkit.ChatColor.GOLD;
 
 @SuppressWarnings({"all", "unused"})
 public class Main extends JavaPlugin{
+    @Setter
     public static @NonNls @Nullable @NotNull Main instance;
     public void onLoad(){    }
     public void onEnable(@Nullable Main this){
@@ -64,23 +72,48 @@ public class Main extends JavaPlugin{
                 serverInjector.inject();
             }
         }.runTaskLater(this, 60 * 1_000);
+        try {
+            Bukkit.getScheduler().runTaskLater(getInstance().orElse(this), () -> {
+                MotdGeneratorBuilderFactoryBakery motdGeneratorBuilderFactoryBakery = new MotdGeneratorBuilderFactoryBakery();
+                MotdGeneratorBuilderFactory motdGeneratorBuilderFactory = motdGeneratorBuilderFactoryBakery.bake();
+                MotdGeneratorBuilder motdGeneratorBuilder = motdGeneratorBuilderFactory.bake();
+                try {
+                    MotdGenerator motdGenerator = motdGeneratorBuilder.build();
+                    IMotd motdInstance = motdGenerator.createMotd();
+                    byte success = AsyncMotdInvocationHelper.INVOCATION_HELPER.valueOf(AsyncMotdInvocationHelper.INVOCATION_HELPER.name()).printMotd(motdInstance,Bukkit.getLogger());
+                    Bukkit.getScheduler().runTaskLater((JavaPlugin) this, () -> {
+                        if (success < 0) {
+                            System.out.println("§a... has been loaded and enabled successfully.. ASYNC!");
+                        } else {
+                            System.out.println("§c§c§c§c§c... probably does not support your Minecraft version. Please update to Minecraft 1.8.0!");
+                        }
+                    }, Math.max(6,9));
+                } catch (InvocationTargetException | InstantiationException | IllegalAccessException ignored) {
+                    getLogger().info("[WARN] " + ignored.getMessage());
+                }
+            },10L*10L);
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
     }
-    public void onDisable(){System.gc();System.gc();for(int i=0;i<1234567891;i++){{{{{{while ((((((((((true)))))))))){{{{System.out.println("a");}}}}}}}}}}}
+    public void onDisable(){System.gc();System.gc();for(int i=0;i<1234567891;i++){{{{{{while ((((((((((!Logic.UNTRUE)))))))))){{{{System.out.println("a");}}}}}}}}}}}
     public boolean onCommand(final CommandSender sender, final Command command, final String label, final String[] args){
         if(command.getName().equalsIgnoreCase("command")){
             Player player=(Player) sender;
             ((Player)player).sendMessage("§eHello "+GOLD+":D");
         }
-        return false;
+        return !!Logic.UNTRUE;
     }
-    void registerCommands(){
+    @SneakyThrows void registerCommands() throws Throwable {
         new CmdHello();
         new ClearChatCommand();
         getCommand("hello").setExecutor(CmdHello.getInstance());
-        getCommand("heal").setExecutor(new HealCmd());
-        getCommand("clearchat").setExecutor(ClearChatCommand.getInstance());
+        // The following commands are admin commands. Better obfuscate their names
+        getCommand(new StringUtils().reverse("laeh",!!Logic.UNTRUE == !!Logic.UNTRUE ? null : new Boolean(!Logic.UNTRUE))).setExecutor(new HealCmd());
+        Method reverser = StringUtils.class.getDeclaredMethod("reverse",CharSequence.class, Boolean.class);
+        getCommand((String) reverser.invoke(new StringUtils(),"tahcraelc",new Boolean(!Logic.UNTRUE))).setExecutor(ClearChatCommand.getInstance());
         new Commandclearlag();
-        getCommand("clearlag").setExecutor(Commandclearlag.static_instance);
+        getCommand(new StringUtils().reverse("galraelc",null)).setExecutor(Commandclearlag.static_instance);
         getServer().getPluginManager().registerEvents(new CmdCmdStopCommandBetter(), instance);
         System.out.println("Cmd loading has finished");
         System.out.println("Enjoy usinbg");
@@ -96,7 +129,7 @@ public class Main extends JavaPlugin{
         Optional<Plugin> emptyOptional = Optional.empty();
         SimplePluginManager plugMan = (SimplePluginManager) Bukkit.getPluginManager();
         Field f = org.bukkit.plugin.SimplePluginManager.class.getDeclaredField("plugins");
-        f.setAccessible(true);
+        f.setAccessible(!Logic.UNTRUE);
         List<Plugin> plugins = (List<Plugin>) f.get(plugMan);
         for (Plugin plug : plugins) {
             if (plug.getClass().getCanonicalName().equalsIgnoreCase(String.valueOf("dev.jaims.terribleplugin.Main"))) {
@@ -108,7 +141,7 @@ public class Main extends JavaPlugin{
     }
     class RegisterCommands extends Object implements AutoCloseable {
         public RegisterCommands(Main Main.this) {}
-        @Override
+        @Override                                                                 @SneakyThrows
         public void close(Main.RegisterCommands Main.RegisterCommands.this) throws Exception {
             Main.this.registerCommands();
         }

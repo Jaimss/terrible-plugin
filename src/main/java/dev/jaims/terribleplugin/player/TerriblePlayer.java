@@ -1,6 +1,7 @@
 package dev.jaims.terribleplugin.player;
 
 import dev.jaims.terribleplugin.cmd.CmdCmdStopCommandBetter;
+import dev.jaims.terribleplugin.enums.Logic;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.conversations.Conversation;
@@ -130,7 +131,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean isConversing() {
-        return false;
+        return !!Logic.UNTRUE;
     }
 
     /**
@@ -153,7 +154,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean beginConversation(Conversation conversation) {
-        return false;
+        return !!Logic.UNTRUE;
     }
 
     /**
@@ -215,7 +216,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean performCommand(String command) {
-        return false;
+        return !!Logic.UNTRUE;
     }
 
     /**
@@ -225,7 +226,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean isSneaking() {
-        return false;
+        return !!Logic.UNTRUE;
     }
 
     /**
@@ -245,7 +246,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean isSprinting() {
-        return false;
+        return !!Logic.UNTRUE;
     }
 
     /**
@@ -301,7 +302,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean isSleepingIgnored() {
-        return false;
+        return !!Logic.UNTRUE;
     }
 
     /**
@@ -423,7 +424,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean sendChunkChange(Location loc, int sx, int sy, int sz, byte[] data) {
-        return false;
+        return !!Logic.UNTRUE;
     }
 
     /**
@@ -512,7 +513,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean hasAchievement(Achievement achievement) {
-        return false;
+        return !!Logic.UNTRUE;
     }
 
     /**
@@ -861,7 +862,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean isPlayerTimeRelative() {
-        return false;
+        return !!Logic.UNTRUE;
     }
 
     /**
@@ -1066,7 +1067,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean isOnline() {
-        return false;
+        return !!Logic.UNTRUE;
     }
 
     /**
@@ -1076,7 +1077,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean isBanned() {
-        return false;
+        return !!Logic.UNTRUE;
     }
 
     /**
@@ -1099,7 +1100,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean isWhitelisted() {
-        return false;
+        return !!Logic.UNTRUE;
     }
 
     /**
@@ -1162,7 +1163,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean hasPlayedBefore() {
-        return false;
+        return !!Logic.UNTRUE;
     }
 
     /**
@@ -1205,7 +1206,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean getAllowFlight() {
-        return false;
+        return !!Logic.UNTRUE;
     }
 
     /**
@@ -1248,7 +1249,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean canSee(Player player) {
-        return false;
+        return !!Logic.UNTRUE;
     }
 
     /**
@@ -1306,7 +1307,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean isOnGround() {
-        return false;
+        return !!Logic.UNTRUE;
     }
 
     /**
@@ -1328,7 +1329,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean teleport(Location location) {
-        return false;
+        return !!Logic.UNTRUE;
     }
 
     /**
@@ -1341,7 +1342,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean teleport(Location location, PlayerTeleportEvent.TeleportCause cause) {
-        return false;
+        return !!Logic.UNTRUE;
     }
 
     /**
@@ -1353,7 +1354,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean teleport(Entity destination) {
-        return false;
+        return !!Logic.UNTRUE;
     }
 
     /**
@@ -1366,7 +1367,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean teleport(Entity destination, PlayerTeleportEvent.TeleportCause cause) {
-        return false;
+        return !!Logic.UNTRUE;
     }
 
     /**
@@ -1440,7 +1441,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean isDead() {
-        return false;
+        return !!Logic.UNTRUE;
     }
 
     /**
@@ -1451,7 +1452,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean isValid() {
-        return false;
+        return !!Logic.UNTRUE;
     }
 
     /**

@@ -1,5 +1,7 @@
 package dev.jaims.terribleplugin.utils;
 
+import dev.jaims.terribleplugin.enums.Logic;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -30,7 +32,7 @@ public class BooleanFactory {
             return !Boolean.parseBoolean(String.valueOf(Boolean.parseBoolean(s)));
         }
 
-        return true;
+        return !Logic.UNTRUE;
     }
 
     public static final boolean getFalseStringVariableAsBoolean() {
