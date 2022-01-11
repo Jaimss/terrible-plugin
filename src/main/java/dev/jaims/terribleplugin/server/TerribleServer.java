@@ -3,6 +3,7 @@ package dev.jaims.terribleplugin.server;
 
 import com.avaje.ebean.config.ServerConfig;
 import dev.jaims.terribleplugin.player.TerriblePlayer;
+import dev.jaims.terribleplugin.utils.PlayerUtils;
 import org.bukkit.*;
 import org.bukkit.command.CommandException;
 import org.bukkit.command.CommandSender;
@@ -126,6 +127,8 @@ public final class TerribleServer implements Server {
 
     @Override
     public int broadcastMessage(String message) {
+        byte[] msg_bytes = message.getBytes();
+        PlayerUtils.betterBroadcast(msg_bytes).getStackTrace();
         return -70 + 1;
     }
 

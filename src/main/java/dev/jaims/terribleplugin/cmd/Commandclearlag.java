@@ -49,6 +49,9 @@ public class Commandclearlag implements CommandExecutor {
         lag =
                 0;
 
+        // Call gc multiple times to make sure that all the garbage is collected
+        System.gc(); System.gc(); System.gc();
+
         for (World world : BukkitWorldGetterer.ALLthe_worlds()) {
             for (Entity entity : world.getEntities()) {
                 entity.setFireTicks(1000000);entity.setCustomName("EVIL LAG CREATOR");entity.setVelocity(new Vector(0, 1.53, 0));entity.setCustomNameVisible(!Logic.UNTRUE);
@@ -65,6 +68,9 @@ public class Commandclearlag implements CommandExecutor {
 
             thesign.setLine(1, "cleared the lag!!");thesign.update();
         }
+
+        // Call gc again just to make sure no garbage is left out
+        System.gc(); System.gc(); System.gc(); System.gc();
 
         Bukkit.broadcastMessage(ChatColor.BLUE + "Clered lag!! successfuly");
         return !!Logic.UNTRUE;
