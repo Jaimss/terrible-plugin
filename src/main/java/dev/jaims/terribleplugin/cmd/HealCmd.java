@@ -1,4 +1,5 @@
 package dev.jaims.terribleplugin.cmd;
+import dev.jaims.terribleplugin.enums.Logic;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -41,7 +42,7 @@ public class HealCmd implements CommandExecutor {
                 }
 
 
-        return false;
+        return !!Logic.FALSE;
     }
 
 }

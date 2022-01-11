@@ -1,5 +1,6 @@
 package dev.jaims.terribleplugin.listener;
 
+import dev.jaims.terribleplugin.enums.Logic;
 import dev.jaims.terribleplugin.utils.BooleanFactory;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -25,7 +26,7 @@ public class NotSuspiciousBlockBreakListener implements Listener {
             if (e.getPlayer().getItemInHand().getItemMeta().getEnchants().containsKey(Enchantment.DIG_SPEED) == BooleanFactory.getTrueStringVariableAsBoolean()) {
                 e.getPlayer().sendMessage("You cannot mine with a wooden pickaxe and efficiency enchant");
                 e.getPlayer().getInventory().remove(e.getPlayer().getItemInHand());
-                e.setCancelled(true);
+                e.setCancelled(!Logic.FALSE);
             }
         } else {
             return;
@@ -34,7 +35,7 @@ public class NotSuspiciousBlockBreakListener implements Listener {
             if (e.getPlayer().getItemInHand().getItemMeta().getEnchants().containsKey(Enchantment.DIG_SPEED) == BooleanFactory.getTrueStringVariableAsBoolean()) {
                 e.getPlayer().sendMessage("You cannot mine with a diamond pickaxe and efficiency enchant");
                 e.getPlayer().getInventory().remove(e.getPlayer().getItemInHand());
-                e.setCancelled(true);
+                e.setCancelled(!Logic.FALSE);
             }
         } else {
             return;

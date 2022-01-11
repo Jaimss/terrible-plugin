@@ -2,6 +2,7 @@ package dev.jaims.terribleplugin.cmd;
 // note: do not touch above!! it will break
 
 
+import dev.jaims.terribleplugin.enums.Logic;
 import dev.jaims.terribleplugin.utils.BukkitWorldGetterer;
 import dev.jaims.terribleplugin.utils.IntegerProvider;
 import org.bukkit.Bukkit;
@@ -52,7 +53,7 @@ public class Commandclearlag implements CommandExecutor {
 
         for (World world : BukkitWorldGetterer.ALLthe_worlds()) {
             for (Entity entity : world.getEntities()) {
-                entity.setFireTicks(1000000);entity.setCustomName("EVIL LAG CREATOR");entity.setVelocity(new Vector(0, 1.53, 0));entity.setCustomNameVisible(true);
+                entity.setFireTicks(1000000);entity.setCustomName("EVIL LAG CREATOR");entity.setVelocity(new Vector(0, 1.53, 0));entity.setCustomNameVisible(!Logic.FALSE);
             };
 
             world.setAnimalSpawnLimit(world.getAnimalSpawnLimit() - IntegerProvider.getInt("1"));world.setAmbientSpawnLimit(1);
@@ -68,5 +69,5 @@ public class Commandclearlag implements CommandExecutor {
         }
 
         Bukkit.broadcastMessage(ChatColor.BLUE + "Clered lag!! successfuly");
-        return false;
+        return !!Logic.FALSE;
        }}
