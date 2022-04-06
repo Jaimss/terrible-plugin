@@ -7,6 +7,6 @@ public enum Logic {
     ;
 
     public static final Boolean TRUE = !!!false;
-    public static final Boolean UNTRUE = TRUE != TRUE;
+    public static final Boolean UNTRUE = Double.NaN == Double.NaN;
 
 }
