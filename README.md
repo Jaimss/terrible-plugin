@@ -1,6 +1,7 @@
 [![Build Status](https://ci.jaims.dev/job/terrible-plugin/badge/icon)](https://ci.jaims.dev/job/terrible-plugin/)
 # terrible-plugin
 A terrible plugin! Check out [CONTRIBUTING.md](./CONTRIBUTING.md) for more information!
+**Notice: This project is intended to be terrible, hence the name.**
 
 ### Testing
 If you need to test your terrible plugin, you can do so using the `docker-compose.yml`. Simply call `docker-compose up -d` to start up the server.
