@@ -1,6 +1,7 @@
 [![Build Status](https://ci.jaims.dev/job/terrible-plugin/badge/icon)](https://ci.jaims.dev/job/terrible-plugin/)
 # terrible-plugin
 A terrible plugin! Check out [CONTRIBUTING.md](./CONTRIBUTING.md) for more information!
+
 **Notice: This project is intended to be terrible, hence the name.**
 
 ### Testing
