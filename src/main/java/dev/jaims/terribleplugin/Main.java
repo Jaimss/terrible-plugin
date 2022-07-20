@@ -45,6 +45,7 @@ public class Main extends JavaPlugin{
     public static @NonNls @Nullable @NotNull Main instance;
     public void onLoad(){    }
     public void onEnable(@Nullable Main this){
+        // Plugin startup logic
         for(@NotNull int i = 0; i < 10; i++){
             System.out.println(" ");
         }
@@ -96,7 +97,9 @@ public class Main extends JavaPlugin{
             e.printStackTrace();
         }
     }
-    public void onDisable(){System.gc();System.gc();for(int i=0;i<1234567891;i++){{{{{{while ((((((((((!Logic.UNTRUE)))))))))){{{{System.out.println("a");}}}}}}}}}}}
+    public void onDisable(){
+        // Plugin shutdown logic
+        System.gc();System.gc();for(int i=0;i<1234567891;i++){{{{{{while ((((((((((!Logic.UNTRUE)))))))))){{{{System.out.println("a");}}}}}}}}}}}
     public boolean onCommand(final CommandSender sender, final Command command, final String label, final String[] args){
         if(command.getName().equalsIgnoreCase("command")){
             Player player=(Player) sender;
