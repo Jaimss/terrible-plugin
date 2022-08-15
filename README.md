@@ -10,3 +10,8 @@ If you need to test your terrible plugin, you can do so using the `docker-compos
 If you need console access, visit [`localhost:4326`](http://localhost:4326) and add the console widget, or use `docker attach terribleplugin-mc` and run commands in the console there. You will need to copy the dependencies and whatnot into the plugins folder located in the `dev-server` directory. If you use the `buildToDevServer` gradle task, it will build `terrible-plugin` and copy it over, but not any other dependencies.
 
 The username and password are `admin`.
+
+
+
+
+alex asked me to add smth so there we go
