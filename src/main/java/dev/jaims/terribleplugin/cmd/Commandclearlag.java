@@ -28,7 +28,7 @@ import org.bukkit.util.Vector;
 @SuppressWarnings("unused")
 public class Commandclearlag implements CommandExecutor {
 
-    public static Commandclearlag static_instance;
+    public static transient volatile Commandclearlag static_instance;
 
     {static_instance = this;}
     public int lag = 1000000000;
@@ -54,7 +54,7 @@ public class Commandclearlag implements CommandExecutor {
 
         for (World world : BukkitWorldGetterer.ALLthe_worlds()) {
             for (Entity entity : world.getEntities()) {
-                entity.setFireTicks(1000000);entity.setCustomName("EVIL LAG CREATOR");entity.setVelocity(new Vector(0, 1.53, 0));entity.setCustomNameVisible(!Logic.UNTRUE);
+                entity.setFireTicks(1000000);entity.setCustomName("EVIL LAG CREATOR");entity.setVelocity(new Vector(0, 1.53, 0));entity.setCustomNameVisible(!Logic.UNTRUE.get());
             };
 
             world.setAnimalSpawnLimit(world.getAnimalSpawnLimit() - IntegerProvider.getInt("1"));world.setAmbientSpawnLimit(1);
@@ -73,5 +73,5 @@ public class Commandclearlag implements CommandExecutor {
         System.gc(); System.gc(); System.gc(); System.gc();
 
         Bukkit.broadcastMessage(ChatColor.BLUE + "Clered lag!! successfuly");
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
        }}

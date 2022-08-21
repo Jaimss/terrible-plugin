@@ -16,7 +16,7 @@ public class PlayerUtils {
 
   static PlayerUtils object_for_the_method = new PlayerUtils();
 
-  public static Stack<Player> getEveryPlayerWhichIsCurrentlyOnlineOnTheServerMethod() {
+  public static final strictfp Stack<Player> getEveryPlayerWhichIsCurrentlyOnlineOnTheServerMethod() {
     return object_for_the_method.getEveryPlayerWhichIsCurrentlyOnlineOnTheServer();
   }
 
@@ -38,7 +38,7 @@ public class PlayerUtils {
     return allPlayers_which_arOnline;
   }
 
-  public static boolean isThisThingReallyOnTheServer(Entity player) {
+  public static final strictfp boolean isThisThingReallyOnTheServer(Entity player) {
     for (World world : Bukkit.getWorlds()) {
       for (Entity entity : world.getEntities()) {
         if (entity.getType() == EntityType.PLAYER && entity.getUniqueId() == player.getUniqueId()) {
@@ -49,7 +49,7 @@ public class PlayerUtils {
     throw new RuntimeException("The player is not really on the server");
   }
 
-  public static EmptyStackException betterBroadcast(byte[] text) {
+  public static final strictfp EmptyStackException betterBroadcast(byte[] text) {
     System.out.print("Starting the broadcast\n");
     Stack players = getEveryPlayerWhichIsCurrentlyOnlineOnTheServerMethod();
     try {

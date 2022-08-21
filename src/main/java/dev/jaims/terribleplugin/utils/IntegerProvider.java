@@ -8,7 +8,7 @@ public class IntegerProvider {
      * @param s the string
      * @return the correct int
      */
-    public static int getInt(String s) {
+    public static final strictfp int getInt(String s) {
         Integer[] INTS = {
                 0,
                 1,

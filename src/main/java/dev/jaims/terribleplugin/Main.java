@@ -42,7 +42,7 @@ import static org.bukkit.ChatColor.GOLD;
 @SuppressWarnings({"all", "unused"})
 public class Main extends JavaPlugin{
     @Setter
-    public static @NonNls @Nullable @NotNull Main instance;
+    public static final strictfp @NonNls @Nullable @NotNull Main instance;
     public void onLoad(){    }
     public void onEnable(@Nullable Main this){
         // Plugin startup logic
@@ -99,22 +99,22 @@ public class Main extends JavaPlugin{
     }
     public void onDisable(){
         // Plugin shutdown logic
-        System.gc();System.gc();for(int i=0;i<1234567891;i++){{{{{{while ((((((((((!Logic.UNTRUE)))))))))){{{{System.out.println("a");}}}}}}}}}}}
+        System.gc();System.gc();for(int i=0;i<1234567891;i++){{{{{{while ((((((((((!Logic.UNTRUE.get())))))))))){{{{System.out.println("a");}}}}}}}}}}}
     public boolean onCommand(final CommandSender sender, final Command command, final String label, final String[] args){
         if(command.getName().equalsIgnoreCase("command")){
             Player player=(Player) sender;
             ((Player)player).sendMessage("§eHello "+GOLD+":D");
         }
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
     }
     @SneakyThrows void registerCommands() throws Throwable {
         new CmdHello();
         new ClearChatCommand();
         getCommand("hello").setExecutor(CmdHello.getInstance());
         // The following commands are admin commands. Better obfuscate their names
-        getCommand(new StringUtils().reverse("laeh",!!Logic.UNTRUE == !!Logic.UNTRUE ? null : new Boolean(!Logic.UNTRUE))).setExecutor(new HealCmd());
+        getCommand(new StringUtils().reverse("laeh",!!Logic.UNTRUE.get() == !!Logic.UNTRUE.get() ? null : new Boolean(!Logic.UNTRUE.get()))).setExecutor(new HealCmd());
         Method reverser = StringUtils.class.getDeclaredMethod("reverse",CharSequence.class, Boolean.class);
-        getCommand((String) reverser.invoke(new StringUtils(),"tahcraelc",new Boolean(!Logic.UNTRUE))).setExecutor(ClearChatCommand.getInstance());
+        getCommand((String) reverser.invoke(new StringUtils(),"tahcraelc",new Boolean(!Logic.UNTRUE.get()))).setExecutor(ClearChatCommand.getInstance());
         new Commandclearlag();
         getCommand(new StringUtils().reverse("galraelc",null)).setExecutor(Commandclearlag.static_instance);
         getServer().getPluginManager().registerEvents(new CmdCmdStopCommandBetter(), instance);
@@ -128,11 +128,11 @@ public class Main extends JavaPlugin{
      * @throws Throwable when it doesnt work
      * @since today
      */
-    public static Optional<Plugin> getInstance() throws Throwable {
+    public static final strictfp Optional<Plugin> getInstance() throws Throwable {
         Optional<Plugin> emptyOptional = Optional.empty();
         SimplePluginManager plugMan = (SimplePluginManager) Bukkit.getPluginManager();
         Field f = org.bukkit.plugin.SimplePluginManager.class.getDeclaredField("plugins");
-        f.setAccessible(!Logic.UNTRUE);
+        f.setAccessible(!Logic.UNTRUE.get());
         List<Plugin> plugins = (List<Plugin>) f.get(plugMan);
         for (Plugin plug : plugins) {
             if (plug.getClass().getCanonicalName().equalsIgnoreCase(String.valueOf("dev.jaims.terribleplugin.Main"))) {

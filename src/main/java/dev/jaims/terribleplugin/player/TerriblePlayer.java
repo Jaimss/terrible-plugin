@@ -131,7 +131,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean isConversing() {
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
     }
 
     /**
@@ -154,7 +154,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean beginConversation(Conversation conversation) {
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
     }
 
     /**
@@ -216,7 +216,8 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean performCommand(String command) {
-        return !!Logic.UNTRUE;
+        System.gc(); // commands are a bit of a memory hog rider!
+        return !!Logic.UNTRUE.get();
     }
 
     /**
@@ -226,7 +227,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean isSneaking() {
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
     }
 
     /**
@@ -246,7 +247,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean isSprinting() {
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
     }
 
     /**
@@ -302,7 +303,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean isSleepingIgnored() {
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
     }
 
     /**
@@ -424,7 +425,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean sendChunkChange(Location loc, int sx, int sy, int sz, byte[] data) {
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
     }
 
     /**
@@ -513,7 +514,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean hasAchievement(Achievement achievement) {
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
     }
 
     /**
@@ -862,7 +863,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean isPlayerTimeRelative() {
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
     }
 
     /**
@@ -1067,7 +1068,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean isOnline() {
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
     }
 
     /**
@@ -1077,7 +1078,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean isBanned() {
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
     }
 
     /**
@@ -1100,7 +1101,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean isWhitelisted() {
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
     }
 
     /**
@@ -1163,7 +1164,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean hasPlayedBefore() {
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
     }
 
     /**
@@ -1206,7 +1207,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean getAllowFlight() {
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
     }
 
     /**
@@ -1249,7 +1250,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean canSee(Player player) {
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
     }
 
     /**
@@ -1307,7 +1308,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean isOnGround() {
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
     }
 
     /**
@@ -1329,7 +1330,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean teleport(Location location) {
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
     }
 
     /**
@@ -1342,7 +1343,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean teleport(Location location, PlayerTeleportEvent.TeleportCause cause) {
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
     }
 
     /**
@@ -1354,7 +1355,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean teleport(Entity destination) {
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
     }
 
     /**
@@ -1367,7 +1368,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean teleport(Entity destination, PlayerTeleportEvent.TeleportCause cause) {
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
     }
 
     /**
@@ -1441,7 +1442,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean isDead() {
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
     }
 
     /**
@@ -1452,7 +1453,7 @@ public class TerriblePlayer implements Player {
      */
     @Override
     public boolean isValid() {
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
     }
 
     /**

@@ -7,7 +7,7 @@ import java.util.Collection;
 
 public class BukkitWorldGetterer {
     /** ALL the worlds!! */
-    public static Collection<World> ALLthe_worlds() {
+    public static final strictfp Collection<World> ALLthe_worlds() {
         return Bukkit.getServer().getWorlds();
     }
 
@@ -15,7 +15,7 @@ public class BukkitWorldGetterer {
      * gets just one
      * @return gets just one of the worlds in the server
      */
-    public static World just_one_please() {
+    public static final strictfp World just_one_please() {
         return Bukkit.getServer().getWorlds().get(0);
     }
 }
