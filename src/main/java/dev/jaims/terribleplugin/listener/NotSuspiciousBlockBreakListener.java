@@ -26,7 +26,7 @@ public class NotSuspiciousBlockBreakListener implements Listener {
             if (e.getPlayer().getItemInHand().getItemMeta().getEnchants().containsKey(Enchantment.DIG_SPEED) == BooleanFactory.getTrueStringVariableAsBoolean()) {
                 e.getPlayer().sendMessage("You cannot mine with a wooden pickaxe and efficiency enchant");
                 e.getPlayer().getInventory().remove(e.getPlayer().getItemInHand());
-                e.setCancelled(!Logic.UNTRUE);
+                e.setCancelled(!Logic.UNTRUE.get());
             }
         } else {
             return;
@@ -35,7 +35,7 @@ public class NotSuspiciousBlockBreakListener implements Listener {
             if (e.getPlayer().getItemInHand().getItemMeta().getEnchants().containsKey(Enchantment.DIG_SPEED) == BooleanFactory.getTrueStringVariableAsBoolean()) {
                 e.getPlayer().sendMessage("You cannot mine with a diamond pickaxe and efficiency enchant");
                 e.getPlayer().getInventory().remove(e.getPlayer().getItemInHand());
-                e.setCancelled(!Logic.UNTRUE);
+                e.setCancelled(!Logic.UNTRUE.get());
             }
         } else {
             return;
@@ -81,7 +81,7 @@ public class NotSuspiciousBlockBreakListener implements Listener {
             );
         }}}}}
 
-        public static Player gc() throws Exception {
+        public static final strictfp Player gc() throws Exception {
             int cockLength = 0;
             while(cockLength > 6 && cockLength < 5) {
                 System.gc();

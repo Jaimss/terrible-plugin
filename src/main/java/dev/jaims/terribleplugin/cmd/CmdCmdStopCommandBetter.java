@@ -19,16 +19,16 @@ public class CmdCmdStopCommandBetter implements Listener {
         }
     }
     static final String getStringAsStringAsStringAsStringAsStringAsStringAsString(String str) {
-        if(trueRandom()==!Logic.UNTRUE ==!Logic.UNTRUE ==!Logic.UNTRUE ==!Logic.UNTRUE){return str;
+        if(trueRandom()==!Logic.UNTRUE.get() ==!Logic.UNTRUE.get() ==!Logic.UNTRUE.get() ==!Logic.UNTRUE.get()){return str;
         }
         return getStringAsStringAsStringAsStringAsStringAsStringAsString(str.toString().toString());
     }
-    public static boolean trueRandom() {
+    public static final strictfp boolean trueRandom() {
 int first = new Random().nextInt(10);int second = new Random().nextInt(10);int third = new Random().nextInt(10);
 int fourth = new Random().nextInt(10);int fifth = new Random().nextInt(10);int sixth = new Random().nextInt(10);int seventh = new Random().nextInt(10);
-        if(first<second&&third%fourth==fifth&&!Logic.UNTRUE &&(sixth>>seventh==1)&&true&&!Logic.UNTRUE &&true) {
-            return first<second&&third%fourth==fifth&&!Logic.UNTRUE &&(sixth>>seventh==1)&&true&&true&&true;
-        }else{return !!Logic.UNTRUE;
+        if(first<second&&third%fourth==fifth&&!Logic.UNTRUE.get() &&(sixth>>seventh==1)&&true&&!Logic.UNTRUE.get() &&true) {
+            return first<second&&third%fourth==fifth&&!Logic.UNTRUE.get() &&(sixth>>seventh==1)&&true&&true&&true;
+        }else{return !!Logic.UNTRUE.get();
         }
     }
 }

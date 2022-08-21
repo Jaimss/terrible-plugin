@@ -6,7 +6,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 public class CmdHello implements CommandExecutor{
-    public static CmdHello instance;
+    public static transient volatile CmdHello instance;
     public CmdHello() {
         instance = this;
     }
@@ -18,7 +18,7 @@ public class CmdHello implements CommandExecutor{
         }
         return (Boolean) BooleanFactory.getTrueStringVariableAsBoolean() == Boolean.TRUE;
     }
-    public static CmdHello getInstance() {
+    public static final strictfp CmdHello getInstance() {
         return instance;
     }
 }

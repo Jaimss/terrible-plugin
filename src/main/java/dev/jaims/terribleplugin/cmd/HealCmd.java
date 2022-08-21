@@ -10,10 +10,10 @@ import java.util.Objects;
 
 public class HealCmd implements CommandExecutor {
 
-    public static String green = "\033[0;32m";
+    public static transient volatile String green = "\033[0;32m";
 
     //sorry, im a lua addictor
-    public static int index = 1;
+    public static transient volatile int index = 1;
     public boolean onCommand(CommandSender sender, Command commmand, String label, String[] args) {
 
         Player p= (Player)sender;
@@ -42,7 +42,7 @@ public class HealCmd implements CommandExecutor {
                 }
 
 
-        return !!Logic.UNTRUE;
+        return !!Logic.UNTRUE.get();
     }
 
 }

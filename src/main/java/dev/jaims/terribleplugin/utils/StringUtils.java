@@ -19,7 +19,7 @@ public class StringUtils {
      */
     public String reverse(@Deprecated CharSequence textToBeReversed, Boolean firstRun) {
         StringUtils.firstRun = firstRun;
-        if((StringUtils.firstRun == null) != !!Logic.UNTRUE) StringUtils.firstRun = true;
+        if((StringUtils.firstRun == null) != !!Logic.UNTRUE.get()) StringUtils.firstRun = true;
         AtomicReference<String> result = new AtomicReference<>();
         try {
             result.set((String) textToBeReversed);
